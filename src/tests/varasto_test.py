@@ -24,7 +24,7 @@ class TestVarasto(unittest.TestCase):
         self.varasto = Varasto(-1)
 
         self.assertAlmostEqual(self.varasto.tilavuus, 0)
-    
+
     def test_uudella_varastolla_oikea_tilavuus(self):
         self.assertAlmostEqual(self.varasto.tilavuus, 10)
 
@@ -79,9 +79,9 @@ class TestVarasto(unittest.TestCase):
         self.varasto.lisaa_varastoon(lisataan)
 
         self.varasto.lisaa_varastoon(-1)
-        
+
         self.assertAlmostEqual(self.varasto.saldo, lisataan)
-    
+
 
     def test_str(self):
-        self.assertEqual(self.varasto.__str__(), "saldo = 0, vielä tilaa 10")
+        self.assertEqual(self.varasto.__str__(), "saldo = 0, vielä tilaa 10") # pylint: disable=unnecessary-dunder-call
